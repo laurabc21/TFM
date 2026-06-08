@@ -1,4 +1,4 @@
-# Informal Register in Machine Translation: A Corpus-Based Evaluation of LLMs
+# Informal Register and LLMs
 
 ## Overview
 
@@ -31,7 +31,7 @@ Two original corpora were compiled in **Catalan** and **Spanish**, systematicall
 
 ```
 .
-├── corpora/
+├── datasets/
 │   ├── catalan/          # Original Catalan corpus with informal feature annotations
 │   └── spanish/          # Original Spanish corpus with informal feature annotations
 ├── translations/
@@ -39,7 +39,6 @@ Two original corpora were compiled in **Catalan** and **Spanish**, systematicall
 │   └── es-en/            # Spanish → English translations (all 3 models)
 ├── evaluation/
 │   ├── human_eval/       # Human evaluation scores and annotations
-│   └── results/          # Aggregated results and analysis
 ├── annotation_schema/    # Informal feature taxonomy and annotation guidelines
 └── README.md
 ```
