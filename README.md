@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the data, annotations, and evaluation results from a study on how large language models (LLMs) handle **informal and colloquial language** in machine translation. Despite the impressive overall translation quality modern LLMs achieve, their ability to preserve informal register across languages remains largely unexplored — this project addresses that gap.
+This repository contains the datasets, coes, and evaluation results from a study on how large language models (LLMs) handle **informal and colloquial language** in machine translation. Despite the impressive overall translation quality modern LLMs achieve, their ability to preserve informal register across languages remains largely unexplored — this project addresses that gap.
 
 Two original corpora were compiled in **Catalan** and **Spanish**, systematically categorised according to a set of informal linguistic features. These corpora were then translated by three LLMs across two language pairs, and the resulting translations were subjected to human evaluation assessing both **register preservation** and **translation strategy adoption**.
 
@@ -31,15 +31,54 @@ Two original corpora were compiled in **Catalan** and **Spanish**, systematicall
 
 ```
 .
+├── codes - translations/
+│   ├── qwen8B/
+│   │   ├── catalan - spanish/
+│   │   │   ├── a_baseline/
+│   │   │   ├── b_fewshot1/
+│   │   │   ├── c_fewshot2/
+│   │   │   ├── d_CoT1/
+│   │   │   └── e_CoT2/
+│   │   └── spanish - english/
+│   │       ├── a_baseline/
+│   │       ├── b_fewshot1/
+│   │       ├── c_fewshot2/
+│   │       ├── d_CoT1/
+│   │       └── e_CoT2/
+│   ├── salamandra7B/
+│   │   ├── catalan - spanish/
+│   │   │   ├── a_baseline/
+│   │   │   ├── b_fewshot1/
+│   │   │   ├── c_fewshot2/
+│   │   │   ├── d_CoT1/
+│   │   │   └── e_CoT2/
+│   │   └── spanish - english/
+│   │       ├── a_baseline/
+│   │       ├── b_fewshot1/
+│   │       ├── c_fewshot2/
+│   │       ├── d_CoT1/
+│   │       └── e_CoT2/
+│   └── translategemma12B/
+│       ├── catalan - spanish/
+│       │   ├── a_baseline/
+│       │   ├── b_fewshot1/
+│       │   ├── c_fewshot2/
+│       │   ├── d_CoT1/
+│       │   └── e_CoT2/
+│       └── spanish - english/
+│           ├── a_baseline/
+│           ├── b_fewshot1/
+│           ├── c_fewshot2/
+│           ├── d_CoT1/
+│           └── e_CoT2/
 ├── datasets/
-│   ├── catalan/          # Original Catalan corpus with informal feature annotations
-│   └── spanish/          # Original Spanish corpus with informal feature annotations
-├── translations/
-│   ├── ca-es/            # Catalan → Spanish translations (all 3 models)
-│   └── es-en/            # Spanish → English translations (all 3 models)
+│   ├── catalan/
+│   └── spanish/
 ├── evaluation/
-│   ├── human_eval/       # Human evaluation scores and annotations
-├── annotation_schema/    # Informal feature taxonomy and annotation guidelines
+├── json_to_excel/        # Conversion of outputs from JSON to Excel
+│   ├── qwen/
+│   ├── salamandra/
+│   └── translategema/
 └── README.md
 ```
 
@@ -47,21 +86,36 @@ Two original corpora were compiled in **Catalan** and **Spanish**, systematicall
 
 ## Informal Linguistic Features
 
-The corpora were annotated according to a systematic taxonomy of informal features, including (but not limited to):
+The corpora were annotated according to a systematic taxonomy of informal features:
 
-- **Colloquial vocabulary** — slang, everyday informal lexicon
-- **Discourse markers** — fillers, hedges, informal connectors
-- **Non-standard morphosyntax** — ellipsis, unconventional agreement patterns
-- **Pragmatic markers** — irony, intensifiers, expressive particles
-- **Register-specific address forms** — second-person variation (e.g. *tu/vos/usted* in Spanish)
+### 1. Lexicon and Vocabulary
+- **1.1** Lexicon of insult
+- **1.2** Colloquial lexicon and slang
+- **1.3** Lexical shortening and abbreviations
+- **1.4** Idiomatic expressions and colloquial phraseology
+- **1.5** Informal intensifiers and quantifiers
+- **1.6** References to popular culture and memes
+- **1.7** Onomatopoeia and sound representation
+- **1.8** Neologisms
 
-Full annotation guidelines are available in `annotation_schema/`.
+### 2. Non-standard Linguistic Features
+- **2.1** Non-standard pronunciation
+- **2.2** Colloquial syntactic structures
+
+### 3. Pragmatics and Discourse
+- **3.1** Discourse markers (fillers, hedges, informal connectors)
+- **3.2** Familiar address or vocatives (e.g. *tu/vos/usted* in Spanish)
+- **3.3** Irony and sarcasm
+
+### 4. Register and Tone
+- **4.1** Hyperbole and exaggeration
+Full annotation guidelines are available in `annotation_categories/`.
 
 ---
 
 ## Evaluation Methodology
 
-Human evaluators assessed each translation along two dimensions:
+Human evaluator assessed each translation along two dimensions:
 
 1. **Register preservation** — Does the translation maintain the informal/colloquial tone of the source?
 2. **Translation strategy** — Which strategy was adopted (e.g. domestication, foreignisation, neutralisation, compensation)?
