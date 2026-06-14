@@ -124,7 +124,6 @@ Human evaluator assessed each translation along two dimensions:
 
 > Detailed evaluations are available in `evaluations/`.
 
-The study sheds light on how informal and colloquial language is handled — and often lost — in automated translation systems, contributing a meaningful addition to an underexplored area of machine translation research.
 
 ---
 
