@@ -134,7 +134,7 @@ If you use this dataset or findings in your work, please cite:
 ```bibtex
 @misc{informal-register-mt,
   title     = {More than Words? An Evaluation of Informal Register in LLM-Based Translations},
-
+  author    = Buigues Castilla, Laura
   year      = {2026},
   note      = {Corpora and evaluation data for Catalan–Spanish and Spanish–English MT}
 }
