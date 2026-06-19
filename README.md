@@ -73,7 +73,7 @@ Two original corpora were compiled in **Catalan** and **Spanish**, systematicall
 │           ├── c_fewshot2/
 │           ├── d_CoT1/
 │           └── e_CoT2/
-├── datasets/              # Original datasets with informal linguistic features annotated
+├── datasets/              # Original datasets in CSV format
 │   ├── catalan/
 │   └── spanish/
 ├── evaluation/            # Evaluation annotations assessing translation strategy and register preservation
