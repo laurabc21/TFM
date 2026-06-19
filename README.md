@@ -104,8 +104,8 @@ The corpora were annotated according to a systematic taxonomy of informal featur
 - **2.2** Colloquial syntactic structures
 
 ### 3. Pragmatics and Discourse
-- **3.1** Discourse markers (fillers, hedges, informal connectors)
-- **3.2** Familiar address or vocatives (e.g. *tu/vos/usted* in Spanish)
+- **3.1** Discourse markers
+- **3.2** Familiar address or vocatives 
 - **3.3** Irony and sarcasm
 
 ### 4. Register and Tone
